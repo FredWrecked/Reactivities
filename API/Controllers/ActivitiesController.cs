@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Persistence;  // Adjust according to your project's namespace
-using Domain;      // Adjust according to your project's namespace
+using Persistence; 
+using Domain;     
 
 namespace API.Controllers
 {

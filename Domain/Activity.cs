@@ -1,8 +1,4 @@
-﻿using Domain; 
-using Microsoft.EntityFrameworkCore;
-
-
-namespace Domain
+﻿namespace Domain
 {
     public class Activity
     {
