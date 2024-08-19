@@ -94,4 +94,24 @@ export default class ProfileStore {
             })
         }
     }
+    
+    updateAbout = async (profile: Profile) => {
+        this.loading = true
+        try {
+            await agent.Profiles.update(profile)
+            runInAction(() => {
+                if (this.profile) {
+                    this.profile.displayName = profile.displayName
+                    this.profile.bio = profile.bio 
+                }
+                this.loading = false
+            })
+        }
+        catch (error) {
+            console.log(error)
+            runInAction(() => {
+                this.loading = false
+            })
+        }
+    }
 }

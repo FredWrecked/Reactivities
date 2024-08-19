@@ -25,5 +25,7 @@ public class MappingProfiles: Profile
         CreateMap<AppUser, Profiles.Profile>()
             .ForMember(d => d.Image, o => o
                 .MapFrom(s => s.Photos.FirstOrDefault(it => it.IsMain).Url));
+        CreateMap<Profiles.Profile, AppUser>();
+
     }
 }
