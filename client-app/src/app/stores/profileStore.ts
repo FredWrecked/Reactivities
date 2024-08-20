@@ -121,7 +121,10 @@ export default class ProfileStore {
             runInAction(() => {
                 if (this.profile) {
                     this.profile.displayName = profile.displayName
-                    this.profile.bio = profile.bio 
+                    this.profile.bio = profile.bio
+                    if (store.userStore.user){
+                        store.userStore.user.displayName = profile.displayName
+                    }
                 }
                 this.loading = false
             })

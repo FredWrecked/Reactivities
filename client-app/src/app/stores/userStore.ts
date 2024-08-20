@@ -41,7 +41,6 @@ export default class UserStore {
     getUser = async  () => {
         const user = await agent.Account.current();
         runInAction(() => this.user = user)
-        router.navigate('/activities')
     }
     
     setImage = (image: string) => {
