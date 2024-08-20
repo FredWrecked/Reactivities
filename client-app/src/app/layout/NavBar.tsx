@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 
 
 export default observer(function NavBar() {
-    const {userStore: {user, logout}, profileStore: {profile}} = useStore();
+    const {userStore: {user, logout}} = useStore();
     return (
         <Menu inverted fixed={"top"}>
             <Container>
@@ -20,7 +20,7 @@ export default observer(function NavBar() {
                 </Menu.Item>
                 <Menu.Item position = 'right'>
                     <Image src = {user?.image || 'assets/user.png'} avatar spaced='right'/>
-                    <Dropdown pointing='top left' text={profile?.displayName}>
+                    <Dropdown pointing='top left' text={user?.displayName}>
                         <Dropdown.Menu>
                             <Dropdown.Item as={Link} to={`profiles/${user?.username}`} text='My Profile' icon='user'/>
                             <Dropdown.Item onClick={logout} text='Logout' icon='power'/>
